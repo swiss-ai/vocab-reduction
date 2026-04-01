@@ -6,7 +6,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODELS = [
     "Yusif-EPFL/apertus-1p5",
-    "Yusif-EPFL/Apertus-1p5-96000-text-only"
+    "faruk-zahiragic/Apertus-1p5-96000-image-only",
+    "faruk-zahiragic/Apertus-1p5-96000-audio-only"
 ]
 NUM_TOKENS_TO_GENERATE = 50
 NUM_WARMUP_RUNS = 5

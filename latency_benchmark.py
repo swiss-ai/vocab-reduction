@@ -5,7 +5,8 @@ from transformers import AutoModelForCausalLM
 
 MODELS = [
     "Yusif-EPFL/apertus-1p5",
-    "Yusif-EPFL/Apertus-1p5-96000-text-only"
+    "faruk-zahiragic/Apertus-1p5-96000-image-only",
+    "faruk-zahiragic/Apertus-1p5-96000-audio-only"
 ]
 
 def cleanup():

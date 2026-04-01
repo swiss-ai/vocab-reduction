@@ -16,4 +16,4 @@ source /users/faruk_zahiragic/miniconda/bin/activate /users/faruk_zahiragic/mini
 export HF_HOME="${HF_HOME:-$SCRATCH/hf_home/}"
 
 # 3. Run the benchmark
-python memory_latency_benchmark.py
+python latency_benchmark.py
