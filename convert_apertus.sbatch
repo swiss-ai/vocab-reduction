@@ -3,9 +3,12 @@
 #SBATCH --job-name=convert
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
+#SBATCH --reservation=SD-69241-apertus-1-5
 #SBATCH --output=logs/%x_%j.log  # control where the stdout will be
 #SBATCH --error=logs/%x_%j.err   # control where the error messages will be
 #SBATCH --partition=normal       # partition name
+#SBATCH --exclude=nid006032
+#SBATCH --cpus-per-task=18 
 
 export TMPDIR="${SLURM_TMPDIR:-/iopsstor/scratch/cscs/$USER/.tmp}"
 mkdir -p "$TMPDIR"
@@ -113,7 +116,7 @@ else
 fi || pause_for_debug $?
 export PATH_TO_HFCONVERTER
 
-RUN_ENV=${RUN_ENV:-$PATH_TO_HFCONVERTER/nemo.toml}
+RUN_ENV=/capstor/store/cscs/swissai/infra01/containers/ngc_25-12-alps2.toml
 echo "Using srun --environment=$RUN_ENV"
 
 cd "$PATH_TO_HFCONVERTER"
@@ -135,23 +138,23 @@ else
 fi || pause_for_debug $?
 
 echo "Dependency installation disabled; using environment as-is."
-srun -ul --environment="$RUN_ENV" bash -c " \
+srun -ul --environment="$RUN_ENV" --mpi=pmix --network=disable_rdzv_get --cpus-per-task=$SLURM_CPUS_PER_TASK bash -c " \
     echo 'Running torchdist->torch'
     cd ${MEGATRON_PATH}
     export PYTHONPATH=${MEGATRON_PATH}
     export CUDA_DEVICE_MAX_CONNECTIONS=1
-    torchrun --nproc-per-node=2 scripts/conversion/torchdist_2_torch.py \
+    torchrun --nproc-per-node=1 scripts/conversion/torchdist_2_torch.py \
         --bf16 \
         --load=$MODEL \
         --ckpt-step=$IT \
         --ckpt-convert-save=$TORCH_NODIST_PATH \
         --pipeline-model-parallel-size=1 \
-        --tensor-model-parallel-size=2
+        --tensor-model-parallel-size=1
 " || pause_for_debug $?
 
 TORCH_SAVE_DIR="$TORCH_NODIST_PATH/torch"
 
-srun -ul --environment="$RUN_ENV" bash -c "set -eux
+srun -ul --environment="$RUN_ENV" --mpi=pmix --network=disable_rdzv_get --cpus-per-task=$SLURM_CPUS_PER_TASK bash -c "set -eux
   echo 'Stage1 output dir: $TORCH_SAVE_DIR'
   ls -lah '$TORCH_SAVE_DIR'
   echo 'Look for torch_dist artifacts (should be EMPTY for legacy torch):'
@@ -161,7 +164,7 @@ srun -ul --environment="$RUN_ENV" bash -c "set -eux
   find '$TORCH_SAVE_DIR' -maxdepth 4 -path '*/mp_rank_*/*model_optim_rng.pt' -print | head
 "
 
-srun -ul --environment="$RUN_ENV" bash -c " \
+srun -ul --environment="$RUN_ENV" --mpi=pmix --network=disable_rdzv_get --cpus-per-task=$SLURM_CPUS_PER_TASK bash -c " \
     export CUDA_DEVICE_MAX_CONNECTIONS=1
     echo 'Running torch->hf'
     cd ${MEGATRON_PATH}
