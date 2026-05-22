@@ -2,3 +2,5 @@ logs/
 .venv_bench/
 audio_model/
 image_model/
+
+.env
