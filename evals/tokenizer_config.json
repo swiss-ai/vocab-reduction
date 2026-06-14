@@ -1,0 +1,6 @@
+{
+  "tokenizer_class": "LlamaTokenizerFast",
+  "clean_up_tokenization_spaces": false,
+  "model_max_length": 8192,
+  "padding_side": "left"
+}

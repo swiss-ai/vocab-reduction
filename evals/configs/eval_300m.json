@@ -1,0 +1,24 @@
+{
+  "logs_root": "/iopsstor/scratch/cscs/faruk_zahiragic/eval-logs/",
+  "hf_temp_dir": "/iopsstor/scratch/cscs/faruk_zahiragic/.hf_temp_dir",
+  "hf_storage_dir": "/iopsstor/scratch/cscs/faruk_zahiragic/.hf-checkpoints",
+  "wandb_entity": "faruk-zahiragic-epfl",
+  "wandb_project": "apertus-300m",
+  "num_hf_checkpoints_to_keep": 1,
+  "max_samples": {
+    "1": 100000000
+  },
+  "models": {
+    "Apertus-300M": {
+      "name": "/iopsstor/scratch/cscs/faruk_zahiragic/models/apertus-300m-hf",
+      "size": 1,
+      "tokens_per_iter": "1048576",
+      "iters": [1000],
+      "extra_env": {
+        "BACKEND": "hf",
+        "TRANSFORMERS_BRANCH": "model/apertus+aimv2-fix",
+        "TOKENIZER": "/capstor/store/cscs/swissai/infra01/hf-checkpoints/Apertus-1p5-96000"
+      }
+    }
+  }
+}

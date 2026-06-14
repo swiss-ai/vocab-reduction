@@ -1,0 +1,24 @@
+{
+  "logs_root": "/path/to/$SCRATCH/eval-logs/",
+  "hf_temp_dir": "/path/to/$SCRATCH/.hf_temp_dir",
+  "hf_storage_dir": "/path/to/$SCRATCH/.hf-checkpoints",
+  "wandb_entity": "your-wandb-entity",
+  "wandb_project": "apertus-300m",
+  "num_hf_checkpoints_to_keep": 1,
+  "max_samples": {
+    "1": 100000000
+  },
+  "models": {
+    "Apertus-300M": {
+      "name": "/path/to/apertus-300m-hf",
+      "size": 1,
+      "tokens_per_iter": "1048576",
+      "iters": [1000],
+      "extra_env": {
+        "BACKEND": "hf",
+        "TRANSFORMERS_BRANCH": "model/apertus+aimv2-fix",
+        "TOKENIZER": "/capstor/store/cscs/swissai/infra01/hf-checkpoints/Apertus-1p5-96000"
+      }
+    }
+  }
+}

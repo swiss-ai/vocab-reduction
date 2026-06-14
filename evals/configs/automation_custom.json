@@ -1,0 +1,25 @@
+{
+        "logs_root": "/iopsstor/scratch/cscs/faruk_zahiragic/evals/eval-logs/main-v1.5/",
+        "hf_temp_dir": "/iopsstor/scratch/cscs/faruk_zahiragic/hf_temp_dir",
+        "hf_storage_dir": "/iopsstor/scratch/cscs/swissai/faruk_zahiragic/hf_storage_dir",
+        "wandb_project": "apertus-1p5-eval",
+        "num_hf_checkpoints_to_keep": 1,
+        "max_samples": {
+                "1": 100000000,
+                "8": 10000000,
+                "60": 500000,
+                "300": 250000,
+                "500": 100000,
+                "600": 50000,
+                "1000": 10000
+        },
+        "models": {
+                "Apertus-1p5-8B-iter00000015-latestc-pruned": {
+                        "name": "Yusif-EPFL/Apertus-1p5-96000-text-only",
+                        "tokens_per_iter": "8392704",
+                        "iters": [0],
+                        "size": 70,
+                        "extra_env": {"BOS": "true", "DTYPE": "auto", "TRANSFORMERS_BRANCH": "none", "EXTRA_PIPS": "datasets==4.0.0"}
+                }
+         }
+}

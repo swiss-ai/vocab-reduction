@@ -1,0 +1,227 @@
+{
+	"logs_root": "/capstor/store/cscs/swissai/infra01/users/ahernnde/evals/eval-logs/main-v1.5/",
+	"hf_temp_dir": "/iopsstor/scratch/cscs/ahernnde/hf_temp_dir",
+	"hf_storage_dir": "/capstor/store/cscs/swissai/infra01/hf-checkpoints",
+	"wandb_entity": "epflmlo-epfl",
+	"wandb_project": "swissai-eval-main-v1.6",
+	"num_hf_checkpoints_to_keep": 1,
+	"max_samples": {
+		"1": 100000000,
+		"8": 10000000,
+		"60": 500000,
+		"300": 250000,
+		"500": 100000,
+		"600": 50000,
+		"1000": 10000
+	},
+	"models": {
+		"Apertus-8B": {
+			"model_dirs": [
+				"/capstor/store/cscs/swissai/a06/main_run_megatron/Megatron-LM/logs/Meg-Runs/main-runs-v1/apertus3-8b-128-nodes/checkpoints",
+				"/iopsstor/scratch/cscs/schlag/main_run_megatron/Megatron-LM/logs/Meg-Runs/main-runs-v1/apertus3-8b-128-nodes/checkpoints",
+				"/capstor/scratch/cscs/asolergi/main_run_70B_megatron/Megatron-LM/logs/Meg-Runs/main-runs-v1/apertus3-70b-512-nodes-1e-5lr/8b-checkpoints-v4"
+			],
+			"size": 8,
+			"tokens_per_iter": "4194304:1678000,8388608:",
+			"frequency": 60000,
+			"start_eval_from": 1730000,
+			"force_iters": [500000, 750000, 1000000, 2627139]
+		},
+		"Apertus-70B": {
+			"model_dirs": [
+				 "/capstor/scratch/cscs/schlag/main_run_70B_megatron/Megatron-LM/logs/Meg-Runs/main-runs-v1/apertus3-70b-512-nodes-1e-5lr/checkpoints",
+				 "/capstor/scratch/cscs/asolergi/main_run_70B_megatron/Megatron-LM/logs/Meg-Runs/main-runs-v1/apertus3-70b-512-nodes-1e-5lr/checkpoints-512-noOverlap"
+			],
+			"size": 70,
+			"tokens_per_iter": "8388608:523519,16777216:",
+			"frequency": 30000,
+			"start_eval_from": 830000,
+			"force_iters": [120000, 620000, 240000, 680000, 360000, 740000, 480000, 800000, 560000, 1115000, 1145000, 1085000, 1155828]
+		},
+
+		"Apertus-8B-8k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-8B-runs/Meg_Runs/main-long-ctx-runs-8b-v1/apertus3-8b-8k-256-nodes-1M/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 9350,
+			"tokens_per_iter": "15000009703424:2,8388608:",
+			"force_iters": [500, 5000]
+		},
+		"Apertus-8B-16k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-8B-runs/Meg_Runs/main-long-ctx-runs-8b-v1/apertus3-8b-16k-512-nodes-2M/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 6930,
+			"tokens_per_iter": "15156868284416:2,8388608:",
+			"force_iters": [500, 4000]
+		},
+		"Apertus-8B-32k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-8B-runs/Meg_Runs/main-long-ctx-runs-8b-v1/apertus3-8b-32k-512-nodes-4M/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 7000,
+			"tokens_per_iter": "15273126002688:2,8388608:"
+		},
+		"Apertus-8B-64k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-8B-runs/Meg_Runs/main-long-ctx-runs-8b-v1/apertus3-8b-64k-512-nodes-12M/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 3480,
+			"tokens_per_iter": "15331846258688:2,8388608:"
+		},
+
+		"Apertus-70B-8k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-70B-runs/Meg_Runs/main-long-ctx-runs-70b-v1/apertus3-70b-8k-512nodes/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 4680,
+			"size": 70,
+			"tokens_per_iter": "15000009703424:2,8388608:"
+		},
+		"Apertus-70B-16k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-70B-runs/Meg_Runs/main-long-ctx-runs-70b-v1/apertus3-70b-16k-512nodes/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 3470,
+			"size": 70,
+			"tokens_per_iter": "15156868284416:2,8388608:"
+		},
+		"Apertus-70B-32k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-70B-runs/Meg_Runs/main-long-ctx-runs-70b-v1/apertus3-70b-32k-512nodes/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 3500,
+			"size": 70,
+			"tokens_per_iter": "15273126002688:2,8388608:"
+		},
+		"Apertus-70B-64k": {
+			"model_dirs": ["/capstor/store/cscs/swissai/infra01/users/ctianche/long-ctx-70B-runs/Meg_Runs/main-long-ctx-runs-70b-v1/apertus3-70b-64k-256nodes-theta12M/checkpoints/"],
+			"frequency": 1,
+			"start_eval_from": 1740,
+			"size": 70,
+			"tokens_per_iter": "15331846258688:2,8388608:"
+		},
+
+		"Apertus8B-tokens15T-longcontext64k-apertus-sft-mixture-8-ln-ademamix": {
+			"name": "/iopsstor/scratch/cscs/smoalla/projects/swiss-alignment/artifacts/shared/outputs/train_sft/final-run/Apertus8B-tokens15T-longcontext64k-apertus-sft-mixture-8-ln-ademamix/checkpoints/c44611dc45683423/checkpoint-7797",
+			"tokens_per_iter": "15361030225920",
+			"iters": [1]
+		},
+		"Apertus8B-tokens15T-longcontext64k-apertus-sft-mixture-8b-ln-plw0.5-ademamix": {
+			"name": "/iopsstor/scratch/cscs/smoalla/projects/swiss-alignment/artifacts/shared/outputs/train_sft/plw-ablations/Apertus8B-tokens15T-longcontext64k-apertus-sft-mixture-8b-ln-plw0.5-ademamix/checkpoints/452fb3f74d71b8f2/checkpoint-7798",
+			"tokens_per_iter": "15361030225920",
+			"iters": [1]
+		},
+
+		"Apertus-8B-Aligned": {
+			"name": "/iopsstor/scratch/cscs/ahernnde/ckpt-mirrors/Aligned-8B",
+			"tokens_per_iter": "15361030225920",
+			"iters": [1]
+		},
+		"Apertus-70B-Aligned": {
+			"name": "/iopsstor/scratch/cscs/ahernnde/ckpt-mirrors/Aligned-70B",
+			"tokens_per_iter": "15346434048000",
+			"iters": [1],
+			"size": 70,
+			"extra_env": {"VLLM_DISABLE_COMPILE_CACHE": "1"}
+		},
+
+		"SmolLM3-3B": { 
+			"name": "HuggingFaceTB/SmolLM3-3B-checkpoints",
+			"tokens_per_iter": "2359296",
+			"iters": [1000000, 1400000, 2000000, 2400000, 3000000, 3400000, 4000000, 4400000, 4720000],
+			"revisions": ["stage1-step-1000000", "stage1-step-1400000", "stage1-step-2000000", "stage1-step-2400000", "stage1-step-3000000", "stage1-step-3400000", "stage2-step-4000000", "stage3-step-4400000", "stage3-step-4720000"],
+			"extra_env": { "BACKEND": "hf", "TRANSFORMERS_BRANCH": "model/apertus+aimv2-fix" },
+			"size": 70
+		},
+
+		"Apertus-70B-sft4honesty-test": {
+			"name": "/iopsstor/scratch/cscs/ahernnde/ckpt-mirrors/Apertus-sft4honesty-70B",
+			"tokens_per_iter": "15346434048000",
+			"iters": [1],
+			"size": 1000,
+			"extra_env": {"VLLM_DISABLE_COMPILE_CACHE": "1"}
+		},
+
+		"Llama3.1-8B": { "name": "meta-llama/Meta-Llama-3.1-8B", "tokens_per_iter": "15000000000000", "iters": [1] },
+		"Llama3.1-8B-Instruct": { "name": "meta-llama/Meta-Llama-3.1-8B-Instruct", "tokens_per_iter": "15000000000000", "iters": [1] },
+		"Llama3.1-70B": { "name": "meta-llama/Meta-Llama-3.1-70B", "tokens_per_iter": "15000000000000", "iters": [1], "size": 70 },
+		"Llama3.1-70B-Instruct": { "name": "meta-llama/Meta-Llama-3.1-70B-Instruct", "tokens_per_iter": "15000000000000", "iters": [1], "size": 70,
+		                         "extra_env": {"VLLM_DISABLE_COMPILE_CACHE": "1" } },
+		"Llama3.3-70B-Instruct": { "name": "meta-llama/Llama-3.3-70B-Instruct", "tokens_per_iter": "15000000000000", "iters": [1], "size": 70 },
+
+		"Llama4-16x17B": {
+			"name": "meta-llama/Llama-4-Scout-17B-16E",
+			"tokens_per_iter": "40000000000000",
+			"iters": [1],
+			"size": 600,
+			"extra_env": {"BACKEND": "hf", "BS": "auto"}
+		},
+
+		"SmolLM2-1.7B": {
+			"name": "HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints",
+			"tokens_per_iter": "2097152",
+			"iters": [125000, 1000000, 2000000, 3000000, 4000000, 5000000],
+			"revisions": ["step-125000", "step-1000000", "step-2000000", "step-3000000", "step-4000000", "step-5000000"]
+		},
+		"SmolLM3-3B-Instruct": { "name": "HuggingFaceTB/SmolLM3-3B", "tokens_per_iter": "2359296", "iters": [4720000] },
+
+		"Qwen2.5-7B": { "name": "Qwen/Qwen2.5-7B", "tokens_per_iter": "18000000000000", "iters": [1] },
+		"Qwen2.5-72B": { "name": "Qwen/Qwen2.5-72B", "tokens_per_iter": "18000000000000", "iters": [1], "size": 72 },
+		"Qwen3-32B": {
+			"name": "Qwen/Qwen3-32B",
+			"tokens_per_iter": "36000000000000",
+			"iters": [1],
+			"extra_env": {"TRANSFORMERS_BRANCH": "v4.52.4"}
+		},
+
+		"EuroLLM-1.7B": { "name": "utter-project/EuroLLM-1.7B", "tokens_per_iter": "4000000000000", "iters": [1] },
+		"EuroLLM-9B": { "name": "utter-project/EuroLLM-9B", "tokens_per_iter": "4000000000000", "iters": [1] },
+
+		"Gemma3-27B-Instruct": { "name": "google/gemma-3-27b-it", "tokens_per_iter": "14000000000000", "iters": [1] },
+
+		"OLMo2-7B": {
+			"name": "allenai/OLMo-2-1124-7B",
+			"tokens_per_iter": "4194304",
+			"iters": [251000, 502000, 753000, 928646, 990000],
+			"revisions": ["stage1-step251000-tokens1053B", "stage1-step502000-tokens2106B", "stage1-step753000-tokens3159B", "stage1-step928646-tokens3896B", null]
+		},
+		"OLMo2-32B": {
+			"name": "allenai/OLMo-2-0325-32B",
+			"tokens_per_iter": "8388888",
+			"iters": [121000, 239000, 360000, 477000, 596000, 721901, 775000],
+			"revisions": ["stage1-step121000-tokens1016B", "stage1-step239000-tokens2005B", "stage1-step360000-tokens3020B", "stage1-step477000-tokens4002B", "stage1-step596000-tokens5000B", "stage1-step721901-tokens6056B", null]
+		},
+
+		"LLM360K2-65B": {
+			"name": "LLM360/K2",
+			"tokens_per_iter": "4177920",
+			"iters": [54351, 133650, 203148, 269973, 338580],
+			"revisions": ["ckpt_075", "ckpt_150", "ckpt_228", "ckpt_303", "ministage2_ckpt_380"],
+			"extra_env": {"VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1"},
+			"size": 65
+		},
+		"LLM360K2-65B-Chat": {
+			"name": "LLM360/K2-Chat",
+			"tokens_per_iter": "4177920",
+			"iters": [338760],
+			"extra_env": {"VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1"},
+			"size": 65
+		},
+
+		"Teuken-7B-Instruct": { "name": "openGPT-X/Teuken-7B-instruct-v0.6", "tokens_per_iter": "6000000000000", "iters": [1],
+		                      "extra_env": {"VLLM_MEMORY": "0.5"} },
+		"ALIA-40B": { "name": "BSC-LT/ALIA-40b", "tokens_per_iter": "9370000000000", "iters": [1], "size": 300,
+		            "extra_env": {"VLLM_MEMORY": "0.5"} },
+		"Salamandra-7B-Instruct": { "name": "BSC-LT/salamandra-7b-instruct", "tokens_per_iter": "12875000000000", "iters": [1],
+		            "extra_env": {"VLLM_MEMORY": "0.5"} },
+		"Minerva-7B-Instruct": { "name": "sapienzanlp/Minerva-7B-instruct-v1.0", "tokens_per_iter": "2500000000000", "iters": [1] },
+		"ALLaM-7B-Instruct": { "name": "ALLaM-AI/ALLaM-7B-Instruct-preview", "tokens_per_iter": "5200000000000", "iters": [1] },
+		"Jais-Adapted-70B": { "name": "inceptionai/jais-adapted-70b", "tokens_per_iter": "371000000000", "iters": [1], "size": 70 },
+		"Sabia-7B": { "name": "maritaca-ai/sabia-7b", "tokens_per_iter": "1010000000000", "iters": [1] },
+		"Viking-33B": { "name": "LumiOpen/Viking-33B", "tokens_per_iter": "1300000000000", "iters": [1], "size": 33 },
+		"Poro-34B": { "name": "LumiOpen/Poro-34B", "tokens_per_iter": "1000000000000", "iters": [1], "size": 34 },
+		"Marin-8B-Instruct": { "name": "marin-community/marin-8b-instruct", "tokens_per_iter": "13705300000000", "iters": [1] },
+
+		"GPTOSS-20B": {
+			"name": "openai/gpt-oss-20b",
+			"tokens_per_iter": "1",
+			"iters": [1],
+			"size": 200,
+			"extra_env": {"TRANSFORMERS_BRANCH": "v4.55.0+aimv2fix", "BACKEND": "hf", "ATTN": "eager"}
+		}
+	 }
+}

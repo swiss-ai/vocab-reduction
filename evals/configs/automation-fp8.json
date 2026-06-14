@@ -1,0 +1,34 @@
+{
+	"logs_root": "/capstor/store/cscs/swissai/infra01/users/ahernnde/evals/eval-logs/fp8-v1.6/",
+	"hf_temp_dir": "/iopsstor/scratch/cscs/ahernnde/hf_temp_dir",
+	"hf_storage_dir": "/capstor/store/cscs/swissai/infra01/hf-checkpoints",
+	"wandb_entity": "epflmlo-epfl",
+	"wandb_project": "swissai-eval-fp8-v1.6",
+	"num_hf_checkpoints_to_keep": 1,
+	"max_samples": {
+		"1": 100000000,
+		"8": 10000000,
+		"60": 500000,
+		"300": 250000,
+		"500": 100000,
+		"600": 50000,
+		"1000": 10000
+	},
+	"models": {
+		"Apertus-70B-Instruct-2509": {
+			"name": "swiss-ai/Apertus-70B-Instruct-2509",
+			"tokens_per_iter": "15361030225920",
+			"iters": [1],
+			"size": 70,
+			"extra_env": {"BOS": "true", "DTYPE": "auto", "TRANSFORMERS_BRANCH": "none", "EXTRA_PIPS": "datasets==4.0.0"}
+		},
+
+		"Apertus-70B-Instruct-2509-fp8": {
+			"name": "/capstor/store/cscs/swissai/infra01/hf-checkpoints/Apertus-70B-Instruct-2509_fp8",
+			"tokens_per_iter": "15361030225920",
+			"iters": [1],
+			"size": 70,
+			"extra_env": {"BOS": "true", "DTYPE": "auto", "TRANSFORMERS_BRANCH": "none", "EXTRA_PIPS": "datasets==4.0.0"}
+		}
+	 }
+}

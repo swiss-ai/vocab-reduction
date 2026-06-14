@@ -1,0 +1,11 @@
+.env
+.venv/
+logs/*.out
+logs/*.err
+wandb
+
+__pycache__
+
+# vim
+**.un~
+**.swp

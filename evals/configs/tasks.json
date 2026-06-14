@@ -1,0 +1,52 @@
+{
+	"show_in_table": [
+		"mmlu/acc",
+		"global_mmlu/acc",
+		"include_base_44/acc",
+		"hellaswag/acc"
+	],
+	"language_groups": {
+		"english": [
+			"eng"
+		],
+		"swiss": [
+			"deu",
+			"fra",
+			"ita",
+			"roh"
+		],
+		"eu": [
+			"bel", 
+			"bul", 
+			"cat", 
+			"ces", 
+			"dan", 
+			"deu", 
+			"ell", 
+			"eng", 
+			"est", 
+			"eus", 
+			"fin", 
+			"fra", 
+			"hrv", 
+			"hun", 
+			"hye", 
+			"ita", 
+			"kat", 
+			"lit", 
+			"mkd", 
+			"nld", 
+			"pol", 
+			"por", 
+			"roh", 
+			"ron", 
+			"rus", 
+			"slk", 
+			"spa", 
+			"sqi", 
+			"srp", 
+			"swe", 
+			"ukr"
+		]
+	}
+}

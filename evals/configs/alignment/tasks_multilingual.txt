@@ -1,0 +1,6 @@
+global_mmlu
+truthfulqa_multilingual
+mgsm_cot_native
+hellaswag_multilingual
+blend
+cultural_bench
