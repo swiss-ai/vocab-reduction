@@ -6,7 +6,7 @@
 #SBATCH --mem=460000
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --reservation=SD-69241-apertus-1-5
+#SBATCH --reservation=SD-69241-apertus-1-5-0
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 #SBATCH --time=12:00:00
@@ -220,8 +220,8 @@ if [[ $IS_MEGATRON = true ]]; then
 	# git clone https://github.com/swiss-ai/Megatron-LM.git
 	# cd Megatron-LM
 	# git checkout $MEGATRON_BRANCH
-	export PYTHONPATH="/iopsstor/scratch/cscs/faruk_zahiragic/Megatron-LM"
-    cd /iopsstor/scratch/cscs/faruk_zahiragic/Megatron-LM
+	export PYTHONPATH="/iopsstor/scratch/cscs/$USER/Megatron-LM"
+    cd /iopsstor/scratch/cscs/$USER/Megatron-LM
 
 	echo "Converting megatron checkpoint to huggingface!"
 	echo "Running torchdist->torch"

@@ -1,6 +1,16 @@
 logs/
 .venv_bench/
+.venv/
 audio_model/
 image_model/
+
+# experiment artifacts (not source)
+wandb/
+slurm-training-logs/
+
+# python
+__pycache__/
+*.pyc
+*.egg-info/
 
 .env

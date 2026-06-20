@@ -9,27 +9,30 @@
     "1": 100000000
   },
   "models": {
-    "apertus-300m-moe-ep2": {
-      "name": "/iopsstor/scratch/cscs/yaskari/eval-checkpoints/apertus-300m-moe-ep2-it8000",
+    "apertus-1b-climbmix-dense": {
+      "name": "/iopsstor/scratch/cscs/yaskari/eval-checkpoints/apertus-1b-climbmix-dense-it62000",
       "size": 1,
       "tokens_per_iter": "1048576",
-      "iters": [8000],
+      "iters": [
+        62000
+      ],
       "extra_env": {
-
         "BACKEND": "hf",
         "TRANSFORMERS_BRANCH": "model/apertus+aimv2-fix",
-        "FORCE_SINGLE_GPU": "true"
+        "EXTRA_PIPS": "datasets==3.6.0"
       }
     },
-    "apertus-300m-dense": {
-      "name": "/iopsstor/scratch/cscs/yaskari/eval-checkpoints/apertus-300m-dense-it8000",
+    "apertus-1b-climbmix-moe": {
+      "name": "/iopsstor/scratch/cscs/yaskari/eval-checkpoints/apertus-1b-climbmix-moe-it62000",
       "size": 1,
       "tokens_per_iter": "1048576",
-      "iters": [8000],
+      "iters": [
+        62000
+      ],
       "extra_env": {
         "BACKEND": "hf",
         "TRANSFORMERS_BRANCH": "model/apertus+aimv2-fix",
-        "FORCE_SINGLE_GPU": "true"
+        "EXTRA_PIPS": "datasets==3.6.0"
       }
     }
   }
